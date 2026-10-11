@@ -1,0 +1,86 @@
+:root {
+  --cream: #f7ebdd;
+  --brown: #4a2820;
+  --gold: #d9ae5f;
+  --berry: #9b3150;
+  --white: #ffffff;
+}
+
+/* ---------- Reviews section wrapper ---------- */
+.reviews-section {
+  width: 100%;
+  max-width: 1440px;      /* matches .cookie-grid */
+  margin: 0 auto;
+  padding: 0 32px 110px;  /* aligns with the grid above */
+  box-sizing: border-box;
+}
+
+/* ---------- Card shell ---------- */
+.review-card {
+  position: relative;
+  display: block;
+  width: 10%;
+  max-width: 10px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 2;              /* wider banner shape (was 4/3) */
+  background: var(--berry);
+  border: 3px solid var(--brown);
+  border-radius: 40px;
+  box-shadow: 12px 12px 0 var(--brown);
+  overflow: hidden;                  /* clips the blob to the rounded corners */
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.review-card:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 9px 9px 0 var(--brown);
+}
+
+/* ---------- Gold blob (top-left corner) ---------- */
+.review-card__blob {
+  position: absolute;
+  top: -70px;
+  left: -70px;
+  width: 160px;
+  height: 160px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ---------- Image fills the card ---------- */
+.review-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ---------- Focus state ---------- */
+.review-card:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .reviews-section {
+    padding: 0 24px 60px;
+  }
+
+  .review-card {
+    aspect-ratio: 4 / 3;             /* taller on small screens */
+    border-radius: 28px;
+    box-shadow: 8px 8px 0 var(--brown);
+  }
+
+  .review-card__blob {
+    width: 110px;
+    height: 110px;
+    top: -50px;
+    left: -50px;
+  }
+}
