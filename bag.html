@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bag | MaiCookies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">MaiCookies</a>
+    <!-- JS NEEDED (1): toggle this nav open/closed on mobile when .nav-toggle is clicked -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Main">
+      <a href="index.html">HOME</a>
+      <a href="shop.html">SHOP</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <!-- JS NEEDED (2): the number in #bag-count must update when items are added/removed (read from localStorage or from PHP session via fetch) -->
+    <a class="bag-btn" href="bag.html">BAG (<span id="bag-count">0</span>)</a>
+  </header>
+
+  <main>
+
+    <section class="page-title">
+      <h1>Your bag</h1>
+      <p>Check your cookies before you order.</p>
+    </section>
+
+    <section class="section bag-layout">
+      <!-- JS NEEDED (7): render these rows from the saved bag data instead of hard-coding them. Quantity +/- buttons change the row total and the order summary; "Remove" deletes the row. -->
+      <!-- JS NEEDED (8): if the bag is empty, hide .bag-items and show #empty-bag instead. -->
+      <div class="bag-items" id="bag-items">
+        <article class="bag-row">
+          <div class="cookie c-choc thumb" aria-hidden="true"></div>
+          <div class="bag-info">
+            <h3>Classic Choc Chip</h3>
+            <p class="price">Rs 120</p>
+          </div>
+          <div class="qty" role="group" aria-label="Quantity for Classic Choc Chip">
+            <button type="button" aria-label="Decrease quantity">&minus;</button>
+            <span>2</span>
+            <button type="button" aria-label="Increase quantity">+</button>
+          </div>
+          <p class="row-total">Rs 240</p>
+          <button type="button" class="remove">Remove</button>
+        </article>
+        <article class="bag-row">
+          <div class="cookie c-red thumb" aria-hidden="true"></div>
+          <div class="bag-info">
+            <h3>Red Velvet</h3>
+            <p class="price">Rs 135</p>
+          </div>
+          <div class="qty" role="group" aria-label="Quantity for Red Velvet">
+            <button type="button" aria-label="Decrease quantity">&minus;</button>
+            <span>1</span>
+            <button type="button" aria-label="Increase quantity">+</button>
+          </div>
+          <p class="row-total">Rs 135</p>
+          <button type="button" class="remove">Remove</button>
+        </article>
+      </div>
+
+      <div class="empty-bag" id="empty-bag" hidden>
+        <h2>Your bag is empty</h2>
+        <p>Add a few cookies and they'll show up here.</p>
+        <a class="btn" href="shop.html">Browse cookies</a>
+      </div>
+
+      <aside class="summary">
+        <h2>Order summary</h2>
+        <dl>
+          <div><dt>Subtotal</dt><dd id="subtotal">Rs 375</dd></div>
+          <div><dt>Delivery</dt><dd id="delivery">Rs 50</dd></div>
+          <div class="total"><dt>Total</dt><dd id="total">Rs 425</dd></div>
+        </dl>
+        <!-- PHP NEEDED: checkout.php creates the order in the database and clears the bag. -->
+        <a class="btn btn-block" href="checkout.php">Checkout</a>
+        <a class="text-link center" href="shop.html">Keep shopping</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo">MaiCookies</p>
+        <p>Small-batch cookies, baked to order.</p>
+      </div>
+      <div>
+        <p class="footer-head">Visit</p>
+        <p>12 Baker Lane<br>Open Tue to Sun, 9am to 6pm</p>
+      </div>
+      <div>
+        <p class="footer-head">Say hello</p>
+        <p><a href="mailto:hello@maicookies.example">hello@maicookies.example</a><br>+230 5000 0000</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 MaiCookies. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

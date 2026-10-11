@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop | MaiCookies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">MaiCookies</a>
+    <!-- JS NEEDED (1): toggle this nav open/closed on mobile when .nav-toggle is clicked -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Main">
+      <a href="index.html">HOME</a>
+      <a href="shop.html" aria-current="page">SHOP</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <!-- JS NEEDED (2): the number in #bag-count must update when items are added/removed (read from localStorage or from PHP session via fetch) -->
+    <a class="bag-btn" href="bag.html">BAG (<span id="bag-count">0</span>)</a>
+  </header>
+
+  <main>
+
+    <section class="page-title">
+      <h1>Shop cookies</h1>
+      <p>Sold individually or in boxes. Every cookie is baked to order.</p>
+    </section>
+
+    <section class="section tight">
+      <!-- JS NEEDED (5): filter buttons. On click, show only .product elements whose data-category matches the button's data-filter ("all" shows everything). Move the "active" class to the clicked button. -->
+      <div class="filters" role="group" aria-label="Filter cookies">
+        <button type="button" class="filter active" data-filter="all">All</button>
+        <button type="button" class="filter" data-filter="classic">Classic</button>
+        <button type="button" class="filter" data-filter="chocolate">Chocolate</button>
+        <button type="button" class="filter" data-filter="nutty">Nutty</button>
+      </div>
+
+      <div class="product-grid">
+        <article class="product" data-category="classic">
+          <div class="cookie c-choc" role="img" aria-label="Classic Choc Chip cookie"></div>
+          <h3>Classic Choc Chip</h3>
+          <p>Brown butter dough, dark chocolate chunks, sea salt.</p>
+          <div class="product-foot">
+            <span class="price">Rs 120</span>
+            <!-- JS NEEDED (3): on click, add this product to the bag (name + price), update #bag-count, and show a short "Added" confirmation -->
+            <button type="button" class="btn btn-small" data-name="Classic Choc Chip" data-price="Rs 120">Add to bag</button>
+          </div>
+        </article>
+        <article class="product" data-category="chocolate">
+          <div class="cookie c-dark" role="img" aria-label="Double Chocolate cookie"></div>
+          <h3>Double Chocolate</h3>
+          <p>Cocoa dough packed with two kinds of chocolate.</p>
+          <div class="product-foot">
+            <span class="price">Rs 130</span>
+            <!-- JS NEEDED (3): on click, add this product to the bag (name + price), update #bag-count, and show a short "Added" confirmation -->
+            <button type="button" class="btn btn-small" data-name="Double Chocolate" data-price="Rs 130">Add to bag</button>
+          </div>
+        </article>
+        <article class="product" data-category="classic">
+          <div class="cookie c-oat" role="img" aria-label="Oatmeal Raisin cookie"></div>
+          <h3>Oatmeal Raisin</h3>
+          <p>Chewy oats, plump raisins, a little cinnamon.</p>
+          <div class="product-foot">
+            <span class="price">Rs 110</span>
+            <!-- JS NEEDED (3): on click, add this product to the bag (name + price), update #bag-count, and show a short "Added" confirmation -->
+            <button type="button" class="btn btn-small" data-name="Oatmeal Raisin" data-price="Rs 110">Add to bag</button>
+          </div>
+        </article>
+        <article class="product" data-category="nutty">
+          <div class="cookie c-pb" role="img" aria-label="Peanut Butter cookie"></div>
+          <h3>Peanut Butter</h3>
+          <p>Soft in the middle, crisp at the edge, crisscross top.</p>
+          <div class="product-foot">
+            <span class="price">Rs 115</span>
+            <!-- JS NEEDED (3): on click, add this product to the bag (name + price), update #bag-count, and show a short "Added" confirmation -->
+            <button type="button" class="btn btn-small" data-name="Peanut Butter" data-price="Rs 115">Add to bag</button>
+          </div>
+        </article>
+        <article class="product" data-category="nutty">
+          <div class="cookie c-white" role="img" aria-label="White Choc Macadamia cookie"></div>
+          <h3>White Choc Macadamia</h3>
+          <p>Buttery dough with creamy white chocolate and nuts.</p>
+          <div class="product-foot">
+            <span class="price">Rs 140</span>
+            <!-- JS NEEDED (3): on click, add this product to the bag (name + price), update #bag-count, and show a short "Added" confirmation -->
+            <button type="button" class="btn btn-small" data-name="White Choc Macadamia" data-price="Rs 140">Add to bag</button>
+          </div>
+        </article>
+        <article class="product" data-category="chocolate">
+          <div class="cookie c-red" role="img" aria-label="Red Velvet cookie"></div>
+          <h3>Red Velvet</h3>
+          <p>Cocoa-red dough with cream cheese chips.</p>
+          <div class="product-foot">
+            <span class="price">Rs 135</span>
+            <!-- JS NEEDED (3): on click, add this product to the bag (name + price), update #bag-count, and show a short "Added" confirmation -->
+            <button type="button" class="btn btn-small" data-name="Red Velvet" data-price="Rs 135">Add to bag</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section band">
+      <h2>Boxes</h2>
+      <div class="features">
+        <div>
+          <h3>Box of 4</h3>
+          <p class="price">Rs 440</p>
+          <p>Pick any four flavours.</p>
+        </div>
+        <div>
+          <h3>Box of 6</h3>
+          <p class="price">Rs 640</p>
+          <p>Pick any six. Gift wrapping included.</p>
+        </div>
+        <div>
+          <h3>Box of 12</h3>
+          <p class="price">Rs 1,200</p>
+          <p>Best for sharing or small events.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo">MaiCookies</p>
+        <p>Small-batch cookies, baked to order.</p>
+      </div>
+      <div>
+        <p class="footer-head">Visit</p>
+        <p>12 Baker Lane<br>Open Tue to Sun, 9am to 6pm</p>
+      </div>
+      <div>
+        <p class="footer-head">Say hello</p>
+        <p><a href="mailto:hello@maicookies.example">hello@maicookies.example</a><br>+230 5000 0000</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 MaiCookies. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

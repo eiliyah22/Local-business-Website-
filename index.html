@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MaiCookies</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/banner.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#" class="logo" aria-label="MaiCookies">MaiCookies</a>
+
+    <nav class="main-nav" aria-label="Main">
+      <a href="#HOME">Home</a>
+      <a href="#SHOP">Shop</a>
+      <a href="#CONTACT">Contact</a>
+    </nav>
+
+    <a href="#bag" class="btn btn-bag">Bag (0)</a>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+
+      <!-- Left: copy -->
+      <div class="hero-copy">
+        <span class="tag">Baked big. Served warm.</span>
+        <span class="ring" aria-hidden="true"></span>
+
+        <h1 class="hero-title">
+          <span>Big</span>
+          <span>Crumb</span>
+        </h1>
+
+        <p class="hero-text">
+          Thick, gooey, wildly generous cookies made by Maiz.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#cookies" class="btn btn-primary">
+            View Cookies
+            <svg width="26" height="12" viewBox="0 0 26 12" fill="none" aria-hidden="true">
+              <path d="M0 6h24M19 1l5 5-5 5" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </a>
+
+          <a href="#story" class="link-down">
+            With LOVE &lt;3
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 0v14M2 8l6 6 6-6" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: photo panel -->
+      <div class="hero-visual" aria-label="Stack of chocolate chunk cookies">
+        <span class="blob blob-gold" aria-hidden="true"></span>
+        <span class="blob blob-cream" aria-hidden="true"></span>
+
+        <figure class="photo-frame">
+          <img src="images/image1.JPG" alt="A tall stack of chocolate chunk cookies">
+        </figure>
+
+        <span class="badge">100%<br>Gooey</span>
+      </div>
+
+    </section>
+
+
+    <!-- ================= TICKER ================= -->
+    <div class="ticker">
+      <div class="ticker-track">
+
+        <!-- Group 1 -->
+        <div class="ticker-group">
+          <span class="ticker-item">Giant Cookies</span>
+          <span class="ticker-star">🍪</span>
+          <span class="ticker-item">Real Butter</span>
+          <span class="ticker-star">🍪</span>
+          <span class="ticker-item">Zero Regrets</span>
+          <span class="ticker-star">🍪</span>
+          <span class="ticker-item">Baked Fresh Daily</span>
+          <span class="ticker-star">🍪</span>
+        </div>
+
+        <!-- Group 2 (duplicate for a seamless loop) -->
+        <div class="ticker-group" aria-hidden="true">
+          <span class="ticker-item">Giant Cookies</span>
+          <span class="ticker-star">🍪</span>
+          <span class="ticker-item">Real Butter</span>
+          <span class="ticker-star">🍪</span>
+          <span class="ticker-item">Zero Regrets</span>
+          <span class="ticker-star">🍪</span>
+          <span class="ticker-item">Baked Fresh Daily</span>
+          <span class="ticker-star">🍪</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ================= COOKIE GRID ================= -->
+    <section class="cookie-grid">
+
+      <article class="cookie-card">
+        <div class="cookie-card__media">
+          <img src="images/image2.JPG" alt="Classic Cookie">
+        </div>
+        <div class="cookie-card__body">
+          <div class="cookie-card__header">
+            <h3 class="cookie-card__title">CLASSIC</h3>
+            <span class="cookie-card__price">Rs 70</span>
+          </div>
+          <p class="cookie-card__desc">Loaded with cream Cadbury, milk and dark chocolate</p>
+          <button class="btn-add" type="button">
+            <span>Add to Bag</span>
+            <span class="btn-add__icon">+</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="cookie-card">
+        <div class="cookie-card__media">
+          <span class="card-badge">Best Seller</span>
+          <img src="images/image3.JPG" alt="Marshmallow cookie">
+        </div>
+        <div class="cookie-card__body">
+          <div class="cookie-card__header">
+            <h3 class="cookie-card__title">Marshmallow</h3>
+            <span class="cookie-card__price">Rs 100</span>
+          </div>
+          <p class="cookie-card__desc">Soft, chewy cookie with a gooey marshmallow centre</p>
+          <button class="btn-add" type="button">
+            <span>Add to Bag</span>
+            <span class="btn-add__icon">+</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="cookie-card">
+        <div class="cookie-card__media">
+          <span class="card-badge">New</span>
+          <img src="images/image4.JPG" alt="Biscoff cookie">
+        </div>
+        <div class="cookie-card__body">
+          <div class="cookie-card__header">
+            <h3 class="cookie-card__title">BISCOFF</h3>
+            <span class="cookie-card__price">Rs 125</span>
+          </div>
+          <p class="cookie-card__desc">Soft cookie with creamy Biscoff &amp; crunchy biscuit crumbs</p>
+          <button class="btn-add" type="button">
+            <span>Add to Bag</span>
+            <span class="btn-add__icon">+</span>
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+
+    <!-- ================= REVIEWS BANNER ================= -->
+    <section class="reviews-section">
+      <a href="#" class="review-card">
+        <span class="review-card__blob" aria-hidden="true"></span>
+        <img src="images\Cookie Reviews Chat Collage.png" alt="" class="review-card-img">
+      </a>
+    </section>
+
+  </main>
+
+</body>
+</html>
