@@ -1,0 +1,60 @@
+:root {
+  --brown: #4a2a24;
+  --cream: #f7e9dc;
+  --berry: #9b2f50;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+}
+
+.ticker {
+  background: var(--brown);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 18px 0;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ticker-item {
+  font-family: "Archivo Black", Arial Black, sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.ticker-star {
+  color: var(--berry);
+  font-size: 22px;
+  margin: 0 28px;
+}
+
+/* Moves exactly one group's width, then restarts invisibly */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pause on hover */
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}

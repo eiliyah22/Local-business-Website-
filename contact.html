@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | MaiCookies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">MaiCookies</a>
+    <!-- JS NEEDED (1): toggle this nav open/closed on mobile when .nav-toggle is clicked -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Main">
+      <a href="index.html">HOME</a>
+      <a href="shop.html">SHOP</a>
+      <a href="contact.html" aria-current="page">CONTACT</a>
+    </nav>
+    <!-- JS NEEDED (2): the number in #bag-count must update when items are added/removed (read from localStorage or from PHP session via fetch) -->
+    <a class="bag-btn" href="bag.html">BAG (<span id="bag-count">0</span>)</a>
+  </header>
+
+  <main>
+
+    <section class="page-title">
+      <h1>Contact us</h1>
+      <p>Questions, custom orders or event catering. We reply within one working day.</p>
+    </section>
+
+    <section class="section contact-layout">
+      <!-- PHP NEEDED: process_contact.php receives these fields and saves them to the database (and/or emails the shop). -->
+      <!-- JS NEEDED (6): validate before submit (name required, valid email, message at least 10 characters) and show error text inside each .field-error element. -->
+      <form class="form" action="process_contact.php" method="post">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required autocomplete="name">
+          <p class="field-error" id="name-error"></p>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+          <p class="field-error" id="email-error"></p>
+        </div>
+        <div class="field">
+          <label for="topic">What is this about?</label>
+          <select id="topic" name="topic">
+            <option>General question</option>
+            <option>Custom or event order</option>
+            <option>Problem with an order</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+          <p class="field-error" id="message-error"></p>
+        </div>
+        <button type="submit" class="btn">Send message</button>
+      </form>
+
+      <aside class="info-card">
+        <h2>Find the bakery</h2>
+        <p><strong>Address</strong><br>12 Baker Lane</p>
+        <p><strong>Hours</strong><br>Tue to Sun, 9am to 6pm<br>Closed Monday</p>
+        <p><strong>Phone</strong><br>+230 5000 0000</p>
+        <p><strong>Email</strong><br><a href="mailto:hello@maicookies.example">hello@maicookies.example</a></p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo">MaiCookies</p>
+        <p>Small-batch cookies, baked to order.</p>
+      </div>
+      <div>
+        <p class="footer-head">Visit</p>
+        <p>12 Baker Lane<br>Open Tue to Sun, 9am to 6pm</p>
+      </div>
+      <div>
+        <p class="footer-head">Say hello</p>
+        <p><a href="mailto:hello@maicookies.example">hello@maicookies.example</a><br>+230 5000 0000</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 MaiCookies. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
