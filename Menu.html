@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Menu</title>
-    <link rel="stylesheet" href="css\Menu.css">
-
-
+    <link rel="stylesheet" href="css/Menu.css">
 </head>
 <body>
 
@@ -18,9 +16,8 @@
 
     <a href="#" class="logo" aria-label="MaiCookies">MaiCookies</a>
 
-
     <a href="View Bag.html" class="bag-button bag-button-primary">
-        View Bag 
+        View Bag
 
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="9" cy="21" r="1"></circle>
@@ -34,15 +31,12 @@
     </header>
 
 
-
-
-
     <div class="menu-container">
-        
+
         <!-- ROW 1 -->
         <div class="card">
             <div class="card-image">
-                <img src="images\image1.png" alt="Dark Chocolate Cookie">
+                <img src="images/image1.png" alt="Dark Chocolate Cookie">
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -50,15 +44,21 @@
                     <span class="price">Rs 60</span>
                 </div>
                 <p class="description">Rich chocolate cookie with dark chocolate chunks</p>
-                <button class="add-btn">
-                    ADD TO BAG <span>+</span>
-                </button>
+                <div class="actions">
+                    <div class="qty">
+                        <button type="button" class="qty-btn" data-step="-1" aria-label="Decrease quantity">-</button>
+                        <input type="number" class="qty-input" name="qty-dark-chocolate" value="1"
+                               min="1" max="200" step="1" inputmode="numeric" aria-label="Quantity">
+                        <button type="button" class="qty-btn" data-step="1" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button type="button" class="add-btn">Add to bag</button>
+                </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-image">
-                <img src="images\image2.png" alt="Classic Cookie">
+                <img src="images/image2.png" alt="Classic Cookie">
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -66,15 +66,21 @@
                     <span class="price">Rs 70</span>
                 </div>
                 <p class="description">Loaded with creamy Cadbury, milk & dark chocolate</p>
-                <button class="add-btn">
-                    ADD TO BAG <span>+</span>
-                </button>
+                <div class="actions">
+                    <div class="qty">
+                        <button type="button" class="qty-btn" data-step="-1" aria-label="Decrease quantity">-</button>
+                        <input type="number" class="qty-input" name="qty-classic" value="1"
+                               min="1" max="200" step="1" inputmode="numeric" aria-label="Quantity">
+                        <button type="button" class="qty-btn" data-step="1" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button type="button" class="add-btn">Add to bag</button>
+                </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-image">
-                <img src="images\image3.png" alt="Oreo Cookie">
+                <img src="images/image3.png" alt="Oreo Cookie">
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -82,16 +88,22 @@
                     <span class="price">Rs 100</span>
                 </div>
                 <p class="description">Soft cookie with crushed Oreo & a whole Oreo on top</p>
-                <button class="add-btn">
-                    ADD TO BAG <span>+</span>
-                </button>
+                <div class="actions">
+                    <div class="qty">
+                        <button type="button" class="qty-btn" data-step="-1" aria-label="Decrease quantity">-</button>
+                        <input type="number" class="qty-input" name="qty-oreo" value="1"
+                               min="1" max="200" step="1" inputmode="numeric" aria-label="Quantity">
+                        <button type="button" class="qty-btn" data-step="1" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button type="button" class="add-btn">Add to bag</button>
+                </div>
             </div>
         </div>
 
         <!-- ROW 2 -->
         <div class="card">
             <div class="card-image">
-                <img src="images\image4.png" alt="Smarties Cookie">
+                <img src="images/image4.png" alt="Smarties Cookie">
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -99,15 +111,21 @@
                     <span class="price">Rs 100</span>
                 </div>
                 <p class="description">Packed with colorful, crunchy Smarties & choco chips</p>
-                <button class="add-btn">
-                    ADD TO BAG <span>+</span>
-                </button>
+                <div class="actions">
+                    <div class="qty">
+                        <button type="button" class="qty-btn" data-step="-1" aria-label="Decrease quantity">-</button>
+                        <input type="number" class="qty-input" name="qty-smarties" value="1"
+                               min="1" max="200" step="1" inputmode="numeric" aria-label="Quantity">
+                        <button type="button" class="qty-btn" data-step="1" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button type="button" class="add-btn">Add to bag</button>
+                </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-image">
-                <img src="images\image5.png" alt="Marshmallow Cookie">
+                <img src="images/image5.png" alt="Marshmallow Cookie">
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -115,15 +133,21 @@
                     <span class="price">Rs 100</span>
                 </div>
                 <p class="description">Soft chewy cookie with a gooey marshmallow centre</p>
-                <button class="add-btn">
-                    ADD TO BAG <span>+</span>
-                </button>
+                <div class="actions">
+                    <div class="qty">
+                        <button type="button" class="qty-btn" data-step="-1" aria-label="Decrease quantity">-</button>
+                        <input type="number" class="qty-input" name="qty-marshmallow" value="1"
+                               min="1" max="200" step="1" inputmode="numeric" aria-label="Quantity">
+                        <button type="button" class="qty-btn" data-step="1" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button type="button" class="add-btn">Add to bag</button>
+                </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-image">
-                <img src="images\image6.png" alt="Nutella Cookie">
+                <img src="images/image6.png" alt="Nutella Cookie">
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -131,16 +155,22 @@
                     <span class="price">Rs 125</span>
                 </div>
                 <p class="description">Soft-baked cookie filled with smooth, gooey Nutella</p>
-                <button class="add-btn">
-                    ADD TO BAG <span>+</span>
-                </button>
+                <div class="actions">
+                    <div class="qty">
+                        <button type="button" class="qty-btn" data-step="-1" aria-label="Decrease quantity">-</button>
+                        <input type="number" class="qty-input" name="qty-nutella" value="1"
+                               min="1" max="200" step="1" inputmode="numeric" aria-label="Quantity">
+                        <button type="button" class="qty-btn" data-step="1" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button type="button" class="add-btn">Add to bag</button>
+                </div>
             </div>
         </div>
 
         <!-- ROW 3 -->
         <div class="card">
             <div class="card-image">
-                <img src="images\image7.JPG" alt="Biscoff Cookie">
+                <img src="images/image7.JPG" alt="Biscoff Cookie">
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -148,15 +178,21 @@
                     <span class="price">Rs 125</span>
                 </div>
                 <p class="description">Soft-based cookie filled with creamy Biscoff & crunchy biscuit crumbs</p>
-                <button class="add-btn">
-                    ADD TO BAG <span>+</span>
-                </button>
+                <div class="actions">
+                    <div class="qty">
+                        <button type="button" class="qty-btn" data-step="-1" aria-label="Decrease quantity">-</button>
+                        <input type="number" class="qty-input" name="qty-biscoff" value="1"
+                               min="1" max="200" step="1" inputmode="numeric" aria-label="Quantity">
+                        <button type="button" class="qty-btn" data-step="1" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button type="button" class="add-btn">Add to bag</button>
+                </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-image">
-                <img src="images\image8.JPG" alt="Kinder Cookie">
+                <img src="images/image8.JPG" alt="Kinder Cookie">
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -164,13 +200,23 @@
                     <span class="price">Rs 150</span>
                 </div>
                 <p class="description">Soft cookie filled with creamy Kinder goodness</p>
-                <button class="add-btn">
-                    ADD TO BAG <span>+</span>
-                </button>
+                <div class="actions">
+                    <div class="qty">
+                        <button type="button" class="qty-btn" data-step="-1" aria-label="Decrease quantity">-</button>
+                        <input type="number" class="qty-input" name="qty-kinder" value="1"
+                               min="1" max="200" step="1" inputmode="numeric" aria-label="Quantity">
+                        <button type="button" class="qty-btn" data-step="1" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button type="button" class="add-btn">Add to bag</button>
+                </div>
             </div>
         </div>
 
     </div>
 
+    <script src="Js\script.js"></script>
 </body>
 </html>
+
+
+        <!-- ROW 2 -->

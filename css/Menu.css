@@ -1,4 +1,3 @@
-
 :root {
   --cream: #f8ebdc;
   --choc: #4a2c26;
@@ -17,9 +16,15 @@
 /* ---------- Reset ---------- */
 *,
 *::before,
-*::after { box-sizing: border-box; margin: 0; padding: 0; }
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--cream);
@@ -29,7 +34,10 @@ body {
   overflow-x: hidden;
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 :focus-visible {
   outline: 3px solid var(--gold);
@@ -55,20 +63,19 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.02em;
   margin: 0 20px;
 }
-.logo span { color: var(--berry); }
 
-
+.logo span {
+  color: var(--berry);
+}
 
 /* ---------- Back Button ---------- */
-
-
 .back-button {
   position: absolute;
   left: 50px;
-  gap: 28px;
   top: 50%;
   transform: translateY(-50%);
 }
+
 .back-button a {
   font-family: var(--font-ui);
   font-weight: 700;
@@ -79,13 +86,12 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s;
 }
-.back-button a:hover { 
-  border-color: var(--berry); 
+
+.back-button a:hover {
+  border-color: var(--berry);
 }
 
 /* ---------- View Bag Button ---------- */
-
-
 .bag-button {
   display: inline-flex;
   align-items: center;
@@ -99,16 +105,18 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 4px 5px 0 var(--choc);
   transition: transform 0.15s, box-shadow 0.15s;
   width: fit-content;
-  position:absolute;
-  right:50px;
-  top:50%;
-  transform: translateY(-50%);
-}
-.bag-button:hover {
-  transform: translate(2px);
-  box-shadow: 2px 2px 0 var(--choc);
+  height:fit-content;
+  position: absolute;
+  right: 50px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
+.bag-button:hover {
+  transform: 2px 0;
+  box-shadow: 2px 2px 0 var(--choc);
+}
 
 .bag-button-primary {
   padding: 10px 20px;
@@ -117,196 +125,177 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.85rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Grid Layout: Automatically creates 3 columns, pushing the 2 remaining cards to the next row */
+/* ---------- Menu Grid ---------- */
+/* Automatically creates 3 columns, pushing the remaining cards to the next row */
 .menu-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 40px 50px;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 50px;
 }
 
-/* Card Styling */
+/* ---------- Card ---------- */
 .card {
-    background-color: #ffffff;
-    border: 3px solid #4a2820 ;
-    border-radius: 24px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 10px #4a2820;
+  background-color: #ffffff;
+  border: 3px solid #4a2820;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px #4a2820;
 }
 
-/* Image Container: Ensures image fits perfectly without stretching the card */
+/* Image area: fixed height so the card doesn't stretch */
 .card-image {
-    width: 100%;
-    height: 250px; /* Fixed height for image area */
-    overflow: hidden;
-    border-bottom: 3px solid #4a2820;
-    background-color: #f7ebdd; /* Fallback color while image loads */
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-bottom: 3px solid #4a2820;
+  background-color: #f7ebdd;
 }
 
 .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This keeps the image proportional and fills the space perfectly */
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* Content Area */
+/* Content area */
 .card-content {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Ensures content stretches to fill the card evenly */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-/* Header (Title and Price) */
+/* Header (title and price) */
 .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .card-header h2 {
-    font-size: 1.3rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
 }
 
 .price {
-    font-size: 1rem;
-    font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
-/* Description Text */
+/* Description text */
 .description {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #4a2820;
-    margin-bottom: 24px;
-    flex-grow: 1; /* Pushes the button to the bottom */
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #4a2820;
+  margin-bottom: 24px;
+  flex-grow: 1; /* Pushes the actions row to the bottom */
 }
 
-/* Add to Bag Button */
+/* ---------- Actions row (stepper + button) ---------- */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Cream quantity stepper */
+.qty {
+  flex: 0 0 auto;
+  width: 120px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  background: #f7ebdd;
+  border: 2px solid #4a2820;
+  border-radius: 999px;
+}
+
+.qty-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #4a2820;
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.qty-btn:hover:not(:disabled) {
+  background: rgba(74, 40, 32, 0.1);
+}
+
+.qty-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.qty-input {
+  width: 50px;
+  border: none;
+  background: transparent;
+  color: #4a2820;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-align: center;
+  outline: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Dark "Add to bag" button */
 .add-btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 12px 18px;
-    background-color: #f7ebdd;
-    border: 2px solid #4a2820;
-    border-radius: 50px;
-    font-family: inherit;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #4a2820;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  flex: 1;
+  height: 56px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 999px;
+  background-color: #4a2820;
+  color: #f7ebdd;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .add-btn:hover {
-    background-color: #4a2820;
-    color: #ffffff;
+  background-color: #9b3150;
 }
 
-.add-btn span {
-    font-size: 1.2rem;
-    line-height: 1;
-}
-
-/* Responsive Adjustments */
+/* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-    .menu-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .menu-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-    .menu-container {
-        grid-template-columns: 1fr;
-    }
+  .menu-container {
+    grid-template-columns: 1fr;
+  }
 }
