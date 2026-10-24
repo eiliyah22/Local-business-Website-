@@ -1,0 +1,292 @@
+/* contact.css
+   Load AFTER style.css and footer.css (uses the :root variables from style.css). */
+
+/* Keep the footer at the bottom on short pages */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Mark the current page in the nav */
+.main-nav a[aria-current="page"] {
+  border-color: var(--berry);
+}
+
+/* ---------- Intro ---------- */
+.contact-intro {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 32px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* .tag comes from style.css */
+.contact-intro .tag {
+  margin-bottom: 18px;
+}
+
+.contact-intro h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.contact-intro p {
+  max-width: 46ch;
+  margin-top: 18px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/* ---------- Layout ---------- */
+.contact-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 32px 100px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+/* ---------- Form card ---------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 36px;
+  background: var(--white);
+  border: var(--line);
+  border-radius: 24px;
+  box-shadow: 8px 8px 0 var(--choc);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--choc);
+  background: var(--cream);
+  border: 2px solid var(--choc);
+  border-radius: 14px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--berry);
+  box-shadow: 0 0 0 4px var(--gold);
+}
+
+/* Custom arrow for the select */
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 44px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%234a2c26' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+/* Validation state (set by js/contact.js) */
+.field [aria-invalid="true"] {
+  border-color: var(--berry);
+}
+
+.field-error {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--berry);
+}
+
+.field-error:empty {
+  display: none;
+}
+
+/* Submit button: look comes from .btn and .btn-primary in style.css */
+.form .btn {
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+/* display:flex above would override the hidden attribute, so restore it */
+.form[hidden],
+.form-success[hidden] {
+  display: none;
+}
+
+/* ---------- Confirmation panel ---------- */
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 36px;
+  background: var(--white);
+  border: var(--line);
+  border-radius: 24px;
+  box-shadow: 8px 8px 0 var(--choc);
+}
+
+.form-success:focus {
+  outline: none;
+}
+
+.form-success h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.form-success p {
+  max-width: 40ch;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.form-success .btn {
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+/* ---------- Info card ---------- */
+.info-card {
+  padding: 32px;
+  background: var(--gold);
+  border: var(--line);
+  border-radius: 24px;
+  box-shadow: 8px 8px 0 var(--choc);
+}
+
+.info-card h2 {
+  margin-bottom: 22px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.info-card p {
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.info-card p + p {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1.5px solid var(--choc);
+}
+
+.info-card strong {
+  font-family: var(--font-ui);
+  font-weight: 700;
+}
+
+.info-card a {
+  border-bottom: 2px solid var(--choc);
+  transition: border-color 0.2s;
+}
+
+.info-card a:hover {
+  border-color: var(--berry);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  /* style.css hides the nav under 900px and there is no menu button,
+     so keep it visible and compact on this page */
+  .site-header {
+    padding: 0 16px;
+    gap: 12px;
+  }
+  .main-nav {
+    display: flex;
+    gap: 14px;
+  }
+  .main-nav a {
+    font-size: 0.75rem;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .contact-intro {
+    padding: 40px 20px 0;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    padding: 32px 20px 70px;
+  }
+
+  .form,
+  .form-success,
+  .info-card {
+    box-shadow: 6px 6px 0 var(--choc);
+  }
+
+  .form,
+  .form-success {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .main-nav {
+    gap: 10px;
+  }
+  .main-nav a {
+    font-size: 0.7rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field input,
+  .field select,
+  .field textarea,
+  .info-card a {
+    transition: none;
+  }
+}
