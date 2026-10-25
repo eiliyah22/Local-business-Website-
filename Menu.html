@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,6 @@
     <nav class="back-button" aria-label="Main">
       <a href="index.html">Back</a>
     </nav>
-
 
     <a href="#" class="logo" aria-label="MaiCookies">MaiCookies</a>
 
@@ -234,29 +234,18 @@
             </header>
 
             <!-- Cart Items -->
-            <div class="cart-items">
-                
-                <!-- Item 1 -->
-                <div class="cart-item">
-                    <div class="item-image-wrapper">
-                        <img src="images/image1.png" alt="Cookie Dough Cake Cookie" class="item-img">
-                    </div>
-                    
-                    <div class="item-details">
-                        <div class="item-info">
-                            <h3>Single</h3>
-                            <p>1x Cookie Dough Cake Cookie</p>
-                        </div>  
-                    </div>
-                </div>
-                <hr class="divider">
+            <div class="cart-items" id="modal-cart-items">
+
             </div>
+
+            <hr class="divider">
 
             <!-- Checkout -->
             <div class="bag-footer">
                 <div class="subtotal-row">
                     <span class="subtotal-label">Subtotal</span>
-                    <span class="subtotal-amount">Rs 0</span>
+                   
+                    <span class="subtotal-amount" id="modal-subtotal">Rs 0</span>
                 </div>
                 <button class="checkout-btn">Checkout</button>
             </div>
@@ -265,7 +254,7 @@
     </div>
 
 
-    <script src="Js\script.js"></script>
+    <script src="js/cart.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -291,5 +280,6 @@
             });
         });
     </script>
+
 </body>
 </html>

@@ -7,14 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header class="site-header">
     <a class="logo" href="index.html">MaiCookies</a>
     <!-- JS NEEDED (1): toggle this nav open/closed on mobile when .nav-toggle is clicked -->
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"></button>
     <nav id="main-nav" class="main-nav" aria-label="Main">
       <a href="index.html">HOME</a>
       <a href="shop.html">SHOP</a>
@@ -35,36 +35,8 @@
       <!-- JS NEEDED (7): render these rows from the saved bag data instead of hard-coding them. Quantity +/- buttons change the row total and the order summary; "Remove" deletes the row. -->
       <!-- JS NEEDED (8): if the bag is empty, hide .bag-items and show #empty-bag instead. -->
       <div class="bag-items" id="bag-items">
-        <article class="bag-row">
-          <div class="cookie c-choc thumb" aria-hidden="true"></div>
-          <div class="bag-info">
-            <h3>Classic Choc Chip</h3>
-            <p class="price">Rs 120</p>
-          </div>
-          <div class="qty" role="group" aria-label="Quantity for Classic Choc Chip">
-            <button type="button" aria-label="Decrease quantity">&minus;</button>
-            <span>2</span>
-            <button type="button" aria-label="Increase quantity">+</button>
-          </div>
-          <p class="row-total">Rs 240</p>
-          <button type="button" class="remove">Remove</button>
-        </article>
-        <article class="bag-row">
-          <div class="cookie c-red thumb" aria-hidden="true"></div>
-          <div class="bag-info">
-            <h3>Red Velvet</h3>
-            <p class="price">Rs 135</p>
-          </div>
-          <div class="qty" role="group" aria-label="Quantity for Red Velvet">
-            <button type="button" aria-label="Decrease quantity">&minus;</button>
-            <span>1</span>
-            <button type="button" aria-label="Increase quantity">+</button>
-          </div>
-          <p class="row-total">Rs 135</p>
-          <button type="button" class="remove">Remove</button>
-        </article>
-      </div>
-
+        </div>
+        
       <div class="empty-bag" id="empty-bag" hidden>
         <h2>Your bag is empty</h2>
         <p>Add a few cookies and they'll show up here.</p>
@@ -102,6 +74,11 @@
     </div>
     <p class="copyright">&copy; 2026 MaiCookies. All rights reserved.</p>
   </footer>
+
+
+  <script src="js/cart.js" defer></script>
+
+
 
 </body>
 </html>
