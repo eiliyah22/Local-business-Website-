@@ -1,0 +1,29 @@
+#checkout-form input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+}
+
+#checkout-msg {
+  min-height: 1.2em;
+  margin: 4px 0 10px;
+  font-size: 0.9rem;
+}
+
+#checkout-msg.error {
+  color: #c0392b;
+}
+
+#checkout-msg.success {
+  color: #1e8449;
+}
+
+#checkout-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}

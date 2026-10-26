@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Menu</title>
     <link rel="stylesheet" href="css/Menu.css">
-    <link rel="stylesheet" href="css/viewbag.css">
+    <link rel="stylesheet" href="css/checkout.css">
 </head>
 <body>
 
@@ -247,7 +247,13 @@
                    
                     <span class="subtotal-amount" id="modal-subtotal">Rs 0</span>
                 </div>
-                <button class="checkout-btn">Checkout</button>
+                <form id="checkout-form" novalidate>
+                    <input type="text" id="cust-name" name="name" placeholder="Full name" maxlength="100">
+                    <input type="email" id="cust-email" name="email" placeholder="Email" maxlength="150">
+                    <input type="tel" id="cust-phone" name="phone" placeholder="Phone number" maxlength="20">
+                    <p id="checkout-msg" role="status"></p>
+                    <button type="submit" class="checkout-btn" id="checkout-btn">Checkout</button>
+                </form>
             </div>
 
         </div>
