@@ -73,7 +73,7 @@ document.querySelectorAll('.qty').forEach(wrapper => {
 // TEST_MODE = false -> after the form validates, submit normally to
 //                      process_contact.php (needs XAMPP or similar).
 (function () {
-  var TEST_MODE = true;
+  var TEST_MODE = false;
 
   var form = document.querySelector('.form');
   if (!form) return;
@@ -135,12 +135,38 @@ document.querySelectorAll('.qty').forEach(wrapper => {
       return;
     }
 
-    if (TEST_MODE && success) {
-      event.preventDefault();
+    event.preventDefault();
+
+    function showSuccess() {
       form.hidden = true;
       success.hidden = false;
       success.focus();
     }
+
+    if (TEST_MODE) {
+      showSuccess();
+      return;
+    }
+
+    var sendButton = form.querySelector('button[type="submit"]');
+    var messageError = document.getElementById('message-error');
+    sendButton.disabled = true;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        sendButton.disabled = false;
+        if (this.status == 200) {
+          showSuccess();
+        } else if (this.status == 0) {
+          messageError.textContent = 'Could not reach the server. Please try again.';
+        } else {
+          messageError.textContent = this.responseText;
+        }
+      }
+    };
+    xhttp.open('POST', 'php/process_contact.php', true);
+    xhttp.send(new FormData(form));
   });
 
   if (sendAnother && success) {

@@ -150,4 +150,85 @@
     }
   });
 
+  var checkoutForm = document.getElementById('checkout-form');
+  var checkoutBtn = document.getElementById('checkout-btn');
+  var checkoutMsg = document.getElementById('checkout-msg');
+
+  function showMessage(text, type) {
+    checkoutMsg.textContent = text;
+    checkoutMsg.className = type;
+  }
+
+  function validateCheckout(name, email, phone, items) {
+    if (items.length === 0) return 'Your bag is empty.';
+    if (name === '') return 'Please enter your name.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return 'Please enter a valid email address.';
+    if (!/^[0-9 +]{7,20}$/.test(phone)) return 'Please enter a valid phone number.';
+    return '';
+  }
+
+  function fillCustomer() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200 && this.responseText != '') {
+        var details = this.responseText.split('|');
+        document.getElementById('cust-name').value = details[0];
+        document.getElementById('cust-email').value = details[1];
+        document.getElementById('cust-phone').value = details[2];
+      }
+    };
+    xhttp.open('GET', 'php/getcustomer.php', true);
+    xhttp.send();
+  }
+
+  if (checkoutForm) {
+    fillCustomer();
+
+    checkoutForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var name = document.getElementById('cust-name').value.trim();
+      var email = document.getElementById('cust-email').value.trim();
+      var phone = document.getElementById('cust-phone').value.trim();
+      var items = load();
+
+      var problem = validateCheckout(name, email, phone, items);
+      if (problem) {
+        showMessage(problem, 'error');
+        return;
+      }
+
+      var formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('phone', phone);
+      for (var i = 0; i < items.length; i++) {
+        formData.append('names[]', items[i].name);
+        formData.append('qtys[]', items[i].qty);
+      }
+
+      checkoutBtn.disabled = true;
+      showMessage('Placing your order...', '');
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          checkoutBtn.disabled = false;
+          if (this.status == 200) {
+            showMessage(this.responseText, 'success');
+            checkoutForm.reset();
+            fillCustomer();
+            save([]);
+          } else if (this.status == 0) {
+            showMessage('Could not reach the server. Please try again.', 'error');
+          } else {
+            showMessage(this.responseText, 'error');
+          }
+        }
+      };
+      xhttp.open('POST', 'php/checkout.php', true);
+      xhttp.send(formData);
+    });
+  }
+
 })();
