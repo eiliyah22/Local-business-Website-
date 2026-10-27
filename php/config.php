@@ -3,7 +3,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "maicookies";
-$ownerEmail = "owner@example.com";
+$ownerEmail = "maizbibi83@gmail.com";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
