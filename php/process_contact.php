@@ -45,6 +45,14 @@ if (!mysqli_query($conn, $sql)) {
     fail("Sorry, something went wrong. Please try again.");
 }
 
+$subject = "New message: " . $topic;
+$mailMessage = "From: " . trim($_POST['name']) . " (" . trim($_POST['email']) . ")\n";
+$mailMessage = $mailMessage . "Topic: " . trim($_POST['topic']) . "\n\n";
+$mailMessage = $mailMessage . trim($_POST['message']) . "\n";
+$headers = "Reply-To: " . trim($_POST['email']);
+
+@mail($ownerEmail, $subject, $mailMessage, $headers);
+
 echo "Thanks for getting in touch. We reply within one working day.";
 
 mysqli_close($conn);

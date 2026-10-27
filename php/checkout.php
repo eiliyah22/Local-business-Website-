@@ -110,7 +110,21 @@ $_SESSION['email'] = trim($_POST['email']);
 $_SESSION['phone'] = trim($_POST['phone']);
 $_SESSION['last_order'] = $orderId;
 
-echo "Thank you " . $_POST['name'] . "! Your order #" . $orderId . " has been placed.";
+$subject = "New order #" . $orderId;
+$message = "New order #" . $orderId . "\n\n";
+$message = $message . "Customer: " . $_SESSION['uname'] . "\n";
+$message = $message . "Email: " . $_SESSION['email'] . "\n";
+$message = $message . "Phone: " . $_SESSION['phone'] . "\n\n";
+
+for ($i = 0; $i < count($names); $i++) {
+    $message = $message . $names[$i] . " x " . $qtys[$i] . " (Rs " . $prices[$i] . " each)\n";
+}
+
+$message = $message . "\nTotal: Rs " . $total . "\n";
+
+@mail($ownerEmail, $subject, $message);
+
+echo"Thank you " . $_POST['name'] . "! Your order #" . $orderId . " has been placed.";
 
 mysqli_close($conn);
 ?>
