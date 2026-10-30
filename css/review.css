@@ -1,41 +1,24 @@
-/* --- ONLY USE THIS CSS FOR THE BANNER --- */
-
-/* This container keeps the banner centered and gives it space below the top cards */
 .review-banner-container {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 40px 20px; /* Adds space above and below the banner */
+    padding: 40px 20px; 
     box-sizing: border-box;
 }
-
-/* The Wide Card Container */
 .review-card {
     width: 100%;
-    max-width: 1400px; /* Adjust this to control how wide the banner gets */
-    height: 800px; /* Fixed height creates the wide banner shape */
+    max-width: 1400px; 
+    height: 800px; 
     background-color: #ffffff;
-    
-    /* Matching the thick border and rounded corners from the image */
-    border: 4px solid #3b2314; /* Fixed invalid hex code */
+    border: 4px solid #3b2314; 
     border-radius: 24px;
-    
-    /* Ensures the image doesn't spill out of the rounded corners */
     overflow: hidden;
-    
-    /* Optional: adds a subtle shadow like the cards in the image */
     box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
 }
-
-/* The Image */
 .review-card img {
-    width: 100%; /* Fixed missing % */
+    width: 100%; 
     height: 100%;
-    
-    /* This makes the image fill the wide container without stretching */
     object-fit: cover; 
-    
-    /* Centers the crop so the focal point of the image stays in the middle */
     object-position: center; 
     display: block;
 }

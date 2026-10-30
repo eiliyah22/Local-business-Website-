@@ -1,23 +1,18 @@
-/* contact.css
-   Load AFTER style.css and footer.css (uses the :root variables from style.css). */
 
-/* Keep the footer at the bottom on short pages */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
 main {
   flex: 1;
 }
-
-/* Mark the current page in the nav */
 .main-nav a[aria-current="page"] {
   border-color: var(--berry);
 }
 
 /* ---------- Intro ---------- */
+
 .contact-intro {
   max-width: 1100px;
   margin: 0 auto;
@@ -26,12 +21,9 @@ main {
   flex-direction: column;
   align-items: flex-start;
 }
-
-/* .tag comes from style.css */
 .contact-intro .tag {
   margin-bottom: 18px;
 }
-
 .contact-intro h1 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -40,15 +32,12 @@ main {
   letter-spacing: -0.04em;
   text-transform: uppercase;
 }
-
 .contact-intro p {
   max-width: 46ch;
   margin-top: 18px;
   font-size: 1.15rem;
   line-height: 1.6;
 }
-
-/* ---------- Layout ---------- */
 .contact-layout {
   max-width: 1100px;
   margin: 0 auto;
@@ -58,8 +47,6 @@ main {
   gap: 40px;
   align-items: start;
 }
-
-/* ---------- Form card ---------- */
 .form {
   display: flex;
   flex-direction: column;
@@ -123,33 +110,26 @@ main {
 }
 
 /* Validation state (set by js/contact.js) */
+
 .field [aria-invalid="true"] {
   border-color: var(--berry);
 }
-
 .field-error {
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--berry);
 }
-
 .field-error:empty {
   display: none;
 }
-
-/* Submit button: look comes from .btn and .btn-primary in style.css */
 .form .btn {
   align-self: flex-start;
   cursor: pointer;
 }
-
-/* display:flex above would override the hidden attribute, so restore it */
 .form[hidden],
 .form-success[hidden] {
   display: none;
 }
-
-/* ---------- Confirmation panel ---------- */
 .form-success {
   display: flex;
   flex-direction: column;
@@ -161,11 +141,9 @@ main {
   border-radius: 24px;
   box-shadow: 8px 8px 0 var(--choc);
 }
-
 .form-success:focus {
   outline: none;
 }
-
 .form-success h2 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -174,19 +152,15 @@ main {
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
-
 .form-success p {
   max-width: 40ch;
   font-size: 1.1rem;
   line-height: 1.6;
 }
-
 .form-success .btn {
   margin-top: 8px;
   cursor: pointer;
 }
-
-/* ---------- Info card ---------- */
 .info-card {
   padding: 32px;
   background: var(--gold);
@@ -194,7 +168,6 @@ main {
   border-radius: 24px;
   box-shadow: 8px 8px 0 var(--choc);
 }
-
 .info-card h2 {
   margin-bottom: 22px;
   font-family: var(--font-display);
@@ -204,36 +177,30 @@ main {
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
-
 .info-card p {
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
-
 .info-card p + p {
   margin-top: 18px;
   padding-top: 18px;
   border-top: 1.5px solid var(--choc);
 }
-
 .info-card strong {
   font-family: var(--font-ui);
   font-weight: 700;
 }
-
 .info-card a {
   border-bottom: 2px solid var(--choc);
   transition: border-color 0.2s;
 }
-
 .info-card a:hover {
   border-color: var(--berry);
 }
 
 /* ---------- Responsive ---------- */
+
 @media (max-width: 900px) {
-  /* style.css hides the nav under 900px and there is no menu button,
-     so keep it visible and compact on this page */
   .site-header {
     padding: 0 16px;
     gap: 12px;
@@ -248,28 +215,23 @@ main {
   .logo {
     font-size: 1.4rem;
   }
-
   .contact-intro {
     padding: 40px 20px 0;
   }
-
   .contact-layout {
     grid-template-columns: 1fr;
     padding: 32px 20px 70px;
   }
-
   .form,
   .form-success,
   .info-card {
     box-shadow: 6px 6px 0 var(--choc);
   }
-
   .form,
   .form-success {
     padding: 24px;
   }
 }
-
 @media (max-width: 380px) {
   .main-nav {
     gap: 10px;
@@ -281,7 +243,6 @@ main {
     font-size: 1.2rem;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .field input,
   .field select,

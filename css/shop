@@ -1,29 +1,19 @@
-/* shop.css
-   Load AFTER style.css and footer.css (uses the :root variables and the
-   .btn / .btn-bag classes from style.css). */
-
-/* Keep the footer at the bottom on short pages */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
 main {
   flex: 1;
 }
-
 .main-nav a[aria-current="page"] {
   border-color: var(--berry);
 }
-
-/* ---------- Intro ---------- */
 .shop-intro {
   max-width: 1100px;
   margin: 0 auto;
   padding: 56px 32px 8px;
 }
-
 .shop-intro h1 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -32,28 +22,23 @@ main {
   letter-spacing: -0.04em;
   text-transform: uppercase;
 }
-
 .shop-intro p {
   max-width: 46ch;
   margin-top: 18px;
   font-size: 1.15rem;
   line-height: 1.6;
 }
-
-/* ---------- Filters ---------- */
 .shop-products {
   max-width: 1100px;
   margin: 0 auto;
   padding: 32px 32px 80px;
 }
-
 .filters {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 36px;
 }
-
 .filter {
   padding: 9px 20px;
   background: var(--white);
@@ -68,23 +53,18 @@ main {
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
-
 .filter:hover {
   border-color: var(--berry);
 }
-
 .filter.active {
   background: var(--choc);
   color: var(--cream);
 }
-
-/* ---------- Product grid ---------- */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 36px;
 }
-
 .product {
   display: flex;
   flex-direction: column;
@@ -94,19 +74,15 @@ main {
   box-shadow: 8px 8px 0 var(--choc);
   overflow: hidden;
 }
-
-/* display:flex above would override the hidden attribute used by the filters */
 .product[hidden] {
   display: none;
 }
-
 .product-body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   padding: 24px 26px 26px;
 }
-
 .product-body h3 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -115,13 +91,11 @@ main {
   letter-spacing: -0.01em;
   text-transform: uppercase;
 }
-
 .product-body p {
   margin-top: 10px;
   font-size: 1rem;
   line-height: 1.45;
 }
-
 .product-foot {
   display: flex;
   align-items: center;
@@ -130,14 +104,12 @@ main {
   margin-top: auto;
   padding-top: 22px;
 }
-
 .price {
   font-family: var(--font-ui);
   font-weight: 700;
   font-size: 1.25rem;
   white-space: nowrap;
 }
-
 .btn-small {
   padding: 11px 20px;
   background: var(--berry);
@@ -145,8 +117,6 @@ main {
   font-size: 0.85rem;
   cursor: pointer;
 }
-
-/* ---------- Cookie pictures (pure CSS) ---------- */
 .cookie {
   display: grid;
   place-items: center;
@@ -154,7 +124,6 @@ main {
   background: var(--cream);
   border-bottom: var(--line);
 }
-
 .cookie::before {
   content: "";
   width: 56%;
@@ -170,7 +139,6 @@ main {
     radial-gradient(circle at 52% 47%, var(--chip) 0 4.5%, transparent 5%),
     var(--base);
 }
-
 .c-choc  { --base: #d9a566; --chip: #4a2c26; }
 .c-dark  { --base: #6b3a2e; --chip: #2b1612; }
 .c-oat   { --base: #d8b98a; --chip: #6e3a4a; }
@@ -178,19 +146,16 @@ main {
 .c-white { --base: #ecd3a0; --chip: #fbf3e4; }
 .c-red   { --base: #a8324a; --chip: #f6e7da; }
 
-/* ---------- Boxes ---------- */
 .boxes {
   background: var(--gold);
   border-top: var(--line);
   border-bottom: var(--line);
 }
-
 .boxes-inner {
   max-width: 1100px;
   margin: 0 auto;
   padding: 56px 32px 64px;
 }
-
 .boxes h2 {
   margin-bottom: 28px;
   font-family: var(--font-display);
@@ -200,13 +165,11 @@ main {
   letter-spacing: -0.03em;
   text-transform: uppercase;
 }
-
 .box-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
 }
-
 .box {
   padding: 26px;
   background: var(--white);
@@ -214,13 +177,11 @@ main {
   border-radius: 20px;
   box-shadow: 6px 6px 0 var(--choc);
 }
-
 .box h3 {
   font-family: var(--font-ui);
   font-weight: 700;
   font-size: 1.15rem;
 }
-
 .box-price {
   margin: 6px 0 10px;
   font-family: var(--font-display);
@@ -229,10 +190,8 @@ main {
   color: var(--berry);
 }
 
-/* ---------- Responsive ---------- */
+
 @media (max-width: 900px) {
-  /* style.css hides the nav under 900px and there is no menu button, so use
-     two rows: logo + bag on top, nav links underneath */
   .site-header {
     height: auto;
     display: flex;
@@ -255,40 +214,32 @@ main {
   .main-nav a {
     font-size: 0.8rem;
   }
-
   .shop-intro {
     padding: 40px 20px 0;
   }
-
   .shop-products {
     padding: 28px 20px 56px;
   }
-
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px;
   }
-
   .boxes-inner {
     padding: 44px 20px 52px;
   }
-
   .box-grid {
     grid-template-columns: 1fr;
   }
 }
-
 @media (max-width: 600px) {
   .product-grid {
     grid-template-columns: 1fr;
   }
-
   .product,
   .box {
     box-shadow: 6px 6px 0 var(--choc);
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .filter {
     transition: none;

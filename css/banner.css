@@ -42,19 +42,13 @@ body {
   font-size: 22px;
   margin: 0 28px;
 }
-
-/* Moves exactly one group's width, then restarts invisibly */
 @keyframes scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
-
-/* Pause on hover */
 .ticker:hover .ticker-track {
   animation-play-state: paused;
 }
-
-/* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
 }
